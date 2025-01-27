@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historia del Fútbol</title>
+    <link rel="stylesheet" href="historiafut.css">
+</head>
+<body>
+    <header>
+        <h1>Historia del Fútbol</h1>
+        <nav>
+            <ul id="menu">
+                <li class="men"><a href="#origenes">Orígenes</a></li>
+                <li class="men"><a href="#siglo19">Siglo XIX</a></li>
+                <li class="men"><a href="#fifa">Fundación de la FIFA</a></li>
+                <li class="men"><a href="#copa-mundo">Primera Copa del Mundo</a></li>
+                <li class="men"><a href="#era-profesional">Era Profesional</a></li>
+                <li class="men"><a href="#futbol-femenino">Fútbol Femenino</a></li>
+                <li class="men"><a href="#impacto-global">Impacto Global</a></li>
+                <li class="men"><a href="#tecnologia">Desarrollo Tecnológico</a></li>
+                <li class="men"><a href="#futuro">Futuro del Fútbol</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="timeline">
+            <div class="row" >
+                <div class="column" id="origenes">
+                    <h2>Orígenes del Fútbol</h2>
+                    <img src="origen-futbol-3.jpg" alt="Orígenes del Fútbol">
+                    <p>El fútbol tiene sus raíces en juegos antiguos que se practicaban en diferentes culturas, como el cuju en China y el harpastum en Roma.</p>
+                </div>
+                <div class="column" id="siglo19">
+                    <h2>Siglo XIX</h2>
+                    <img src="siglo.jpg" alt="Siglo XIX">
+                    <p>El fútbol moderno comenzó a tomar forma en Inglaterra, donde se establecieron las primeras reglas y se fundaron los primeros clubes.</p>
+                </div>
+                <div class="column" id="fifa">
+                    <h2>Fundación de la FIFA</h2>
+                    <img src="fifa.jpg" alt="Fundación de la FIFA">
+                    <p>En 1904, se fundó la FIFA (Federación Internacional de Fútbol Asociación) para unificar las reglas y organizar competiciones internacionales.</p>
+                </div>
+            </div>
+            <div class="row" id="copa-mundo">
+                <div class="column" id="copa-mundo">
+                    <h2>Primera Copa del Mundo</h2>
+                    <img src="copa.jpg" alt="Primera Copa del Mundo">
+                    <p>La primera Copa del Mundo se celebró en 1930 en Uruguay, donde el país anfitrión se coronó campeón.</p>
+                </div>
+                <div class="column" id="era-profecional">
+                    <h2>Era Profesional</h2>
+                    <img src="era-pof.jpg" alt="Era Profesional">
+                    <p>En la década de 1950, el fútbol se profesionalizó, aumentando la popularidad y el nivel de competencia en todo el mundo.</p>
+                </div>
+                <div class="column" id="futbol-femenino">
+                    <h2>Fútbol Femenino</h2>
+                    <img src="futbol femenino.jpg" alt="Fútbol Femenino">
+                    <p>El fútbol femenino ha crecido exponencialmente desde la década de 1990, con la creación de la Copa del Mundo Femenina en 1991.</p>
+                </div>
+            </div>
+            <div class="row" id="impacto-global">
+                <div class="column">
+                    <h2>Impacto Global</h2>
+                    <img src="impacto.jpg" alt="Impacto Global">
+                    <p>Hoy en día, el fútbol es el deporte más popular del mundo, con millones de aficionados y una influencia cultural significativa.</p>
+                </div>
+                <div class="column" id="tecnologia">
+                    <h2>Desarrollo Tecnológico</h2>
+                    <img src="tecnologia.jpg" alt="Desarrollo Tecnológico">
+                    <p>La tecnología ha cambiado la forma en que se juega y se ve el fútbol, con VAR y análisis de datos que mejoran el juego.</p>
+                </div>
+                <div class="column" id="futuro">
+                    <h2>Futuro del Fútbol</h2>
+                    <img src="futuro.jpg" alt="Futuro del Fútbol">
+                    <p>El futuro del fútbol incluye un enfoque en la sostenibilidad, la inclusión y el uso de tecnología avanzada para mejorar la experiencia del juego.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2023 Historia del Fútbol. Todos los derechos reservados.</p>
+    </footer>
+    <script>
+        const menu = document.getElementById('#menu');
+        window.addEventListener('scroll', () => {
+            const scrollPos = window.scrollY;
+            const sections = document.querySelectorAll('.timeline .row');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                const sectionId = section.getAttribute('id');
+                if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                    const activeLink = menu.querySelector(`a[href="#${sectionId}"]`);
+                    menu.querySelectorAll('a').forEach(link => link.classList.remove('active'));
+                    activeLink.classList.add('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
